@@ -13,3 +13,10 @@
   margin-left: -2.5px;
   margin-right: -2.5px;
 }
+
+.teamsectionstyle{
+  background-image: url(../images/AA_Manschaftsfoto_DNI_9122.png);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
