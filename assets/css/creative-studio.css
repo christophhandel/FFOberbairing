@@ -4965,6 +4965,7 @@ input[type="button"].btn-block {
   -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1rem 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .navbar>.container,
@@ -5076,6 +5077,12 @@ input[type="button"].btn-block {
   .navbar-expand-sm>.container-fluid {
     padding-right: 0;
     padding-left: 0;
+  }
+}
+
+@media custom-navbar (min-height: 800) {
+  .custom-navbar {
+    background-color: gray;
   }
 }
 
@@ -5487,7 +5494,6 @@ input[type="button"].btn-block {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid #eaf0fc;
   border-radius: 0.2rem;
 }
 
@@ -12236,6 +12242,7 @@ p {
   display: block;
   display: block;
 }
+
 .img-wrapperKommando {
   position: relative;
   border-radius: 0.2rem;
@@ -12365,8 +12372,8 @@ p {
 }
 
 .box {
-  color: #000000;
-  background: #c4c4c4;
+  color: #ffffff;
+  background: #5e5e5e;
   border-radius: 4rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -12679,18 +12686,20 @@ pre .code {
   margin: auto;
   width: 95%;
   max-width: 1101px;
-
   z-index: 9999;
   -webkit-transition: all, 0.33s;
   transition: all, 0.33s;
   padding: 0 10px;
+  border-radius: 16px;
+  background-color: rgba(234, 240, 252, 0.1);
 }
 
 @media (max-width: 450px) {
   .custom-navbar {
-    background-color: rgba(234, 240, 252, 0.1);
+    background-color: rgb(234 234 234 / 49%);
   }
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   .custom-navbar {
@@ -12700,7 +12709,7 @@ pre .code {
 }
 
 .custom-navbar .navbar-toggler {
-  border: 1px solid rgba(234, 240, 252, 0.2);
+  border: 1px solid #000;
   height: 55px;
 }
 
@@ -12708,7 +12717,7 @@ pre .code {
   width: 35px;
   height: 3px;
   display: block;
-  background-color: rgba(234, 240, 252, 0.2);
+  background-color: #000;
   border-radius: 10px;
 }
 
@@ -12719,13 +12728,14 @@ pre .code {
   display: block;
   height: 3px;
   color: #495057;
-  background-color: rgba(234, 240, 252, 0.2);
+  background-color: #000;
 }
 
 .custom-navbar .navbar-toggler span:after {
   -webkit-transform: translateY(-13px);
   -ms-transform: translateY(-13px);
   transform: translateY(-13px);
+
 }
 
 .custom-navbar .navbar-toggler span:before {
@@ -12742,7 +12752,7 @@ pre .code {
   margin: 0 5px;
   font-weight: 600;
   font-size: 16px;
-  color: #fff !important;
+  color: #000 !important;
 }
 
 .custom-navbar .nav-link.active {
@@ -12923,7 +12933,8 @@ pre .code {
 
 @media (max-width: 450px) {
   .header {
-    background: url("https://i.pinimg.com/1200x/0c/cf/6e/0ccf6e9946317e370113d697ea175351.jpg")
+    background: url(../../images/Slider/MobileMainWallpaper.jpg);
+    background-size: cover;
   }
 }
 
