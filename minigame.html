@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<body style="
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+align-content: space-around;
+justify-content: space-evenly;
+align-items: center;">
+  <div style="display: none;">
+    <img id="truck" src="images/car.png" width="220" height="277">
+    <img id="fire"
+      src="https://clipart-library.com/images_k/animated-fire-transparent-background/animated-fire-transparent-background-14.png"
+      alt="The Scream" width="220" height="277">
+  </div>
+
+
+
+  <canvas id="myCanvas" width="500" height="500" style="background-color:#269b3b;">
+    Your browser does not support the HTML canvas tag.</canvas>
+
+  <button onclick="this.blur(); startGame()">Start Game</button>
+  <button onclick="window.location.href='index.html'">Back</button>
+
+  <script>
+
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    var truckImg = document.getElementById("truck");
+    var fireImg = document.getElementById("fire");
+
+    var dir = ["", "", ""];
+
+    var rotation = 0;
+    var movement = 0;
+
+    let truck = { x: 100, y: 100, water: 500 };
+
+    let fire = { x: 0, y: 0, count: 0 }
+
+    var speed = 1;
+    var turnSpeed = 4;
+
+    function gameLoop(timeStamp) {
+      draw();
+
+
+      if (dir[0] == "ArrowUp") {
+        //console.log(2*Math.cos(rotation))
+        truck.x += 2 * Math.cos(rotation);
+        truck.y += 2 * Math.sin(rotation);
+      }
+      if (dir[0] == "ArrowDown") {
+        truck.x -= 2 * Math.cos(rotation);
+        truck.y -= 2 * Math.sin(rotation);
+      }
+
+      if (dir[1] == "ArrowRight") {
+        rotation += turnSpeed * Math.PI / 180;
+      }
+      if (dir[1] == "ArrowLeft") {
+        rotation -= turnSpeed * Math.PI / 180;
+      }
+
+      if (dir[2] == "Space" && truck.water > 0) {
+        truck.water--;
+
+        if (getWaterCords().x > fire.x && getWaterCords().x < fire.x + 50
+          && getWaterCords().y > fire.y && getWaterCords().y < fire.y + 50) {
+          fire.count++;
+          if (fire.count == 100) {
+            spawnFire();
+          }
+        }
+      }
+
+      if (dir[2] == "KeyR" && truck.water < 500) {
+        if ((truck.x + (-25 * Math.cos(rotation))) < 400 && (truck.x + (-25 * Math.cos(rotation))) > 0 &&
+          (truck.y + (-25 * Math.sin(rotation))) < 500 && (truck.y + (-25 * Math.sin(rotation))) > 400) {
+          truck.water++;
+        }
+      }
+
+      // Keep requesting new frames
+      window.requestAnimationFrame(gameLoop);
+    }
+
+    function draw() {
+      //console.log(dir);
+
+      ctx.clearRect(0, 0, c.width, c.height);
+
+      //section truck
+      ctx.translate(truck.x, truck.y);
+      ctx.rotate(rotation);
+
+      ctx.drawImage(truckImg, -25, -25, 50, 50);
+      if (dir[2] == "Space" && truck.water > 0) {
+        ctx.fillStyle = '#1f1fff';
+        ctx.fillRect(25, -2, 50, 5);
+      }
+
+      ctx.rotate(-1 * rotation);
+      ctx.translate(-1 * truck.x, -1 * truck.y);
+
+      //end section truck
+
+      //section fire
+      ctx.drawImage(fireImg, fire.x, fire.y, 50, 50);
+      //end section fire
+
+      //section refill water
+      ctx.fillStyle = '#1f1fff'
+      ctx.fillRect(0, 400, 100, 100);
+
+      ctx.fillRect(350, 50, 100 * (truck.water / 500), 10);
+      //end section refill water
+
+    }
+
+    function getWaterCords() {
+      return { x: truck.x + (75 * Math.cos(rotation)), y: truck.y + (75 * Math.sin(rotation)) }
+    }
+
+    function spawnFire() {
+      fire.x = Math.random() * 450;
+      fire.y = Math.random() * 450;
+      fire.count = 0;
+      //console.log(fire.x + " "  + fire.y);
+    }
+
+    function startGame() {
+      spawnFire();
+
+      window.requestAnimationFrame(gameLoop);
+
+      //console.log("started")
+    }
+
+    document.addEventListener('keydown', (event) => {
+      if (event.code == "ArrowUp" || event.code == "ArrowDown") {
+        dir[0] = event.code;
+      }
+
+      if (event.code == "ArrowRight" || event.code == "ArrowLeft") {
+        dir[1] = event.code;
+      }
+
+      if (event.code == "Space" || event.code == "KeyR") {
+        dir[2] = event.code;
+      }
+      //ArrowUp, ArrowDown, ArrowRight, ArrowLeft
+
+      //console.log(`Key pressed ${event.name} \r\n Key code value: ${event.code}`);
+
+    }, false);
+
+    document.addEventListener('keyup', (event) => {
+      if (event.code == "ArrowUp" || event.code == "ArrowDown") {
+        dir[0] = "";
+      }
+      if (event.code == "ArrowRight" || event.code == "ArrowLeft") {
+        dir[1] = "";
+      }
+      if (event.code == "Space") {
+        dir[2] = "";
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

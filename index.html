@@ -21,7 +21,7 @@
     <!-- Bootstrap + Creative Studio main styles -->
     <link rel="stylesheet" href="assets/css/creative-studio.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="javascript" href="assets/js/creative-studio.js">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -83,7 +83,6 @@
     <!-- End Of Page Header -->
 
     <!--Box-->
-
     <div class="box text-center">
         <div class="box-item">
             <img src="images/MainBox/rettung.png" style="opacity: 1;">
@@ -113,20 +112,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-5 col-lg-4">
-                    <img src="assets/imgs/about.jpg"
-                        alt="Download free bootstrap 4 landing page, free boootstrap 4 templates, Download free bootstrap 4.1 landing page, free boootstrap 4.1.1 templates, Creative studio Landing page"
-                        class="w-100 img-thumbnail mb-3">
+                    <img src="images/Hl.-Florian.jpeg" class="w-70 img-thumbnail mb-3">
                 </div>
                 <div class="col-md-7 col-lg-8">
-                    <h6 class="section-subtitle mb-0">We Create</h6>
-                    <h6 class="section-title mb-3">Awesome Work</h6>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente cupiditate quas, amet harum
-                        perferendis minus, cum dolorum obcaecati iste aspernatur voluptatum aut.</p>
-                    <p>Cum laudantium unde nemo doloribus eligendi quodarum ea vitae dicta. Accusantium vero, ea? Alias,
-                        atque libero. Id, ut harum. </p>
-                    <p>consectetur adipisicing elit. Omnis quidem, quos iure a dolorum illum culpa quia nemo soluta,
-                        ratione harum beatae minus doloribus consectetur! Similique tempora sunt doloribus molestias.
-                    </p>
+                    <h6 class="section-subtitle mb-0">Das macht uns aus!</h6>
+                    <h6 class="section-title mb-3">Über uns</h6>
+                    <p>Die Freiwillige Feuerwehr Oberbairing ist eine Einsatzorganisation mit ca. 190 Mitgliedern und
+                        liegt in der Gemeinde Altenberg bei Linz.</p>
+                    <p>WIR gehen für SIE durchs Feuer – 24 Stunden am Tag, 7 Tage die Woche und 365 Tage im Jahr</p>
+                    <p>Dabei konnten wir alleine dieses Jahr mehrere Menschen- sowie Tierleben retten!</p>
                 </div>
             </div>
         </div>
@@ -134,28 +128,52 @@
     <!-- End of About Section -->
 
     <!-- Stats Section with bg -->
-    <section class="has-bg-img py-md">
+    <section class="has-bg-img py-md sec-padding wow fadeIn animated"
+        style="visibility: visible; animation-name: fadeIn;">
         <div class="container text-center">
+
             <h6 class="section-subtitle">2021/2022</h6>
             <h6 class="section-title mb-6">Einsätze</h6>
-            <div class="widget mb-4">
-                <div class="widget-item">
-                    <i>38</i>
-                    <h4>Technische Einsätze</h4>
+            <div class="row">
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated"
+                    data-wow-duration="300ms"
+                    style="visibility: visible; animation-duration: 300ms; animation-name: fadeInUp;">
+                    <i class="fa fa-beer medium-icon"></i>
+                    <span id="anim-number-pizza" class="counter-number"></span>
+                    <span class="timer counter alt-font appear" data-to="980" data-speed="7000">4</span>
+                    <p class="counter-title">Brandeinsätze</p>
                 </div>
-                <div class="widget-item">
-                    <i>12</i>
-                    <h4>Brandeinsätze</h4>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 bottom-margin text-center counter-section wow fadeInUp sm-margin-bottom-ten animated"
+                    data-wow-duration="600ms"
+                    style="visibility: visible; animation-duration: 600ms; animation-name: fadeInUp;">
+                    <i class="fa fa-heart medium-icon"></i>
+                    <span class="timer counter alt-font appear" data-to="980" data-speed="7000">28</span>
+                    <span class="counter-title">Technische Einsätze</span>
                 </div>
-                <div class="widget-item">
-                    <i class="ti-filter"></i>
-                    <h4>Übungen</h4>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 bottom-margin-small text-center counter-section wow fadeInUp xs-margin-bottom-ten animated"
+                    data-wow-duration="900ms"
+                    style="visibility: visible; animation-duration: 900ms; animation-name: fadeInUp;">
+                    <i class="fa fa-anchor medium-icon"></i>
+                    <span class="timer counter alt-font appear" data-to="810" data-speed="7000">56</span>
+                    <span class="counter-title">Ausbildungen</span>
                 </div>
-                <div class="widget-item">
-                    <i class="ti-thumb-up"></i>
-                    <h4>Lehrgänge</h4>
+                <!-- end counter -->
+                <!-- counter -->
+                <div class="col-md-3 col-sm-6 text-center counter-section wow fadeInUp animated"
+                    data-wow-duration="1200ms"
+                    style="visibility: visible; animation-duration: 1200ms; animation-name: fadeInUp;">
+                    <i class="fa fa-user medium-icon"></i>
+                    <span class="timer counter alt-font appear" data-to="600" data-speed="7000">2800</span>
+                    <span class="counter-title">bestellte Biere</span>
                 </div>
+                <!-- end counter -->
             </div>
+
         </div>
     </section>
     <!-- End Of Stats Sectoin -->
@@ -425,9 +443,9 @@
                             <h6 class="font-weight-bold">CREATED BY</h6>
                         </li>
                         <li class="list-body">
-                            <a href="#" class="logo">
+                            <a href="minigame.html" class="logo">
                                 <img src="assets/imgs/logo.png">
-                                <h6>CHHRI</h6>
+                                <h6>CHRI</h6>
                             </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae nobis fugit maxime
                                 deleniti minus optio accusamus, quam maiores explicabo sunt.</p>
@@ -435,8 +453,8 @@
                                 Copyright
                                 <script>document.write(new Date().getFullYear())</script> &copy; <a
                                     class="d-inline text-primary">Chri </a>
-                                    <br>
-                                  Design by: DEVCRUD
+                                <br>
+                                Design by: DEVCRUD
                             </p>
                         </li>
                     </ul>
@@ -489,7 +507,6 @@
 
     <!-- Creative Studio js -->
     <script src="assets/js/creative-studio.js"></script>
-
 </body>
 
 </html>
