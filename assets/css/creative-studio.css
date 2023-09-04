@@ -390,7 +390,6 @@ h6,
 .h1,
 .h2,
 .h3,
-.h4,
 .h5,
 .h6 {
   margin-bottom: 0.5rem;
@@ -415,7 +414,7 @@ h3,
 
 h4,
 .h4 {
-  font-size: 1.6rem;
+  font-size: 2.2rem;
 }
 
 h5,
@@ -7920,9 +7919,12 @@ button.bg-dark:focus {
 .d-flex {
   display: -webkit-box !important;
   display: -webkit-flex !important;
-  display: -ms-flexbox !important;
   display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
 }
+
 
 .d-inline-flex {
   display: -webkit-inline-box !important;
@@ -12788,7 +12790,7 @@ pre .code {
 }
 
 .custom-navbar.affix .nav-link.active {
-  color: #E61D2E !important;
+  /*color: #E61D2E !important;*/
 }
 
 @-webkit-keyframes affix {
